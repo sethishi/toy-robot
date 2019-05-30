@@ -1,4 +1,4 @@
-##ToyRobot Simulator
+### ToyRobot Simulator
 
 Toyrobot simulator is designed to run in 2 modes.
 1. File 
