@@ -36,6 +36,7 @@ public class ConsoleInputScanner implements InputScanner {
 
     b = isValidPlaceCommand(firstCommand);
     while (!b) {
+      log.error("first command must be a valid PLACE command <PLACE 1,2,NORTH>");
       firstCommand = scanner.nextLine();
       b = isValidPlaceCommand(firstCommand);
     }
@@ -61,6 +62,5 @@ public class ConsoleInputScanner implements InputScanner {
 
     RobotPosition robotPosition = commandAction.performAction(newGame,command);
     newGame.setRobotPosition(robotPosition);
-    System.out.println(newGame);
   }
 }

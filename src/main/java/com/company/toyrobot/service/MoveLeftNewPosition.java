@@ -8,13 +8,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MoveLeftNewPosition implements NewPosition {
 
-  private Direction currentDirection;
-  private int currentX;
-  private int currentY;
-
 
   @Override
   public RobotPosition getNewPosition(Game game, String command) {
+    Direction currentDirection;
+    int currentX;
+    int currentY;
 
     currentX = game.getRobotPosition().getX();
     currentY = game.getRobotPosition().getY();

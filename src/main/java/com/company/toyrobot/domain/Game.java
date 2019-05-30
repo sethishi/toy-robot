@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 
 @Getter
 @AllArgsConstructor
-@ToString
 @NoArgsConstructor
 @Component
 public class Game {

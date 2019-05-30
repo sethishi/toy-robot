@@ -21,16 +21,4 @@ public class Config {
     return new Table(tableHeight, tablewidth);
   }
 
-//  @Bean(name = "game")
-//  public ToyRobotGameImpl game() {
-//    return new ToyRobotGameImpl();
-//  }
-
-
-//  @Bean
-//  public MoveRightNewPosition moveRightNewPosition(){
-//    return new MoveRightNewPosition(game());
-//  }
-
-
 }

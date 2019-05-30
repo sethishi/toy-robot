@@ -22,10 +22,11 @@ public class ToyRobotGameImpl extends PlayGame {
   @Override
   public Game start(String command) {
 
-    String[] s = command.split(" ");
+    String[] commands = command.split(" ");
+    String[] coordinates = commands[1].split(",");
 
     try {
-      if (valueOf(s[1]) > squareTable.getX() || valueOf(s[2]) > squareTable.getY()) {
+      if (valueOf(coordinates[0]) > squareTable.getX() || valueOf(coordinates[1]) > squareTable.getY()) {
         log.error("invalid position on table ");
         return null;
       }
@@ -34,7 +35,7 @@ public class ToyRobotGameImpl extends PlayGame {
 
     }
 
-    RobotPosition robotPosition = new RobotPosition(valueOf(s[1]), valueOf(s[2]), getEnumFromStr(Direction.class, s[3]));
+    RobotPosition robotPosition = new RobotPosition(valueOf(coordinates[0]), valueOf(coordinates[1]), getEnumFromStr(Direction.class, coordinates[2]));
     return new Game(squareTable, robotPosition);
 
   }

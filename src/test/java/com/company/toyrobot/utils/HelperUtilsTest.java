@@ -12,7 +12,7 @@ public class HelperUtilsTest {
 
     HelperUtils.x = 4;
     HelperUtils.y = 4;
-    boolean validPlaceCommand = HelperUtils.isValidPlaceCommand("PLACE 1 2 NORTH");
+    boolean validPlaceCommand = HelperUtils.isValidPlaceCommand("PLACE 1,2,NORTH");
 
     assertTrue(validPlaceCommand);
 
@@ -21,7 +21,7 @@ public class HelperUtilsTest {
 
   @Test
   public void isInValidPlaceCommand() {
-    boolean validPlaceCommand = HelperUtils.isValidPlaceCommand("PLACE 1 2 NO");
+    boolean validPlaceCommand = HelperUtils.isValidPlaceCommand("PLACE 1,2,NO");
     assertFalse(validPlaceCommand);
   }
 

@@ -9,9 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 @NoArgsConstructor
 @Slf4j
 public class MoveRightNewPosition implements NewPosition {
-  private Direction currentDirection;
-  private int currentX;
-  private int currentY;
+
 
   private Game game;
 
@@ -21,7 +19,9 @@ public class MoveRightNewPosition implements NewPosition {
 
   @Override
   public RobotPosition getNewPosition(Game game, String command) {
-
+    Direction currentDirection;
+    int currentX;
+    int currentY;
     try {
 
       currentX = game.getRobotPosition().getX();

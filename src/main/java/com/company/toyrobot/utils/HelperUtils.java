@@ -37,19 +37,22 @@ public class HelperUtils {
 
   public static boolean isValidPlaceCommand(String command) {
 
-    Pattern p = Pattern.compile("^PLACE\\s\\d\\s\\d\\s\\D+");
+    Pattern p = Pattern.compile("^PLACE\\s\\d,\\d,\\D+");
     Matcher m = p.matcher(command);
     isValid = m.matches();
 
-
-    if (isValid && isValidEnum(Direction.class, command.split(" ")[3])
-        && Integer.valueOf(command.split(" ")[1]) <= x
-        && Integer.valueOf(command.split(" ")[2]) <= y) {
-      isValid = true;
-
-    } else {
-      isValid = false;
+    if(isValid){
+      String[] placeCommand = command.split(" ");
+      String[] coordinates = placeCommand[1].split(",");
+      if(isValidEnum(Direction.class,coordinates[2]) && Integer.valueOf(coordinates[0])<=x
+          && Integer.valueOf(coordinates[1]) <=y ){
+        isValid=true;
+      } else {
+        isValid=false;
+      }
     }
+
+
 
     return isValid;
 

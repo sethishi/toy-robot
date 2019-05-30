@@ -39,12 +39,12 @@ public class CommandActionImplTest {
 
   @Test
   public void testInvalidPlaceCommandDoesntChangePosition() {
-    assertThat(commandAction.performAction(testGame, "PLACE 1 6").getDirection()).isEqualTo(Direction.NORTH);
-    assertThat(commandAction.performAction(testGame, "PLACE 1 2 TW").getDirection()).isEqualTo(Direction.NORTH);
+    assertThat(commandAction.performAction(testGame, "PLACE 1,6").getDirection()).isEqualTo(Direction.NORTH);
+    assertThat(commandAction.performAction(testGame, "PLACE 1,2,TW").getDirection()).isEqualTo(Direction.NORTH);
   }
 
   @Test
   public void testValidPlaceCommand() {
-    assertThat(commandAction.performAction(testGame, "PLACE 2 0 EAST").getDirection()).isEqualTo(Direction.EAST);
+    assertThat(commandAction.performAction(testGame, "PLACE 2,0,EAST").getDirection()).isEqualTo(Direction.EAST);
   }
 }

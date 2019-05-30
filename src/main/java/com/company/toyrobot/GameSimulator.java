@@ -33,9 +33,7 @@ public class GameSimulator {
     SpringApplication.run(GameSimulator.class, args);
 
 
-    System.out.println("choose input source : ");
-    System.out.println("[1] - FILE");
-    System.out.println("[2] - CONSOLE ");
+    System.out.println("choose input source : \n"+"[1] - FILE \n"+"[2] - CONSOLE \n");
 
     Scanner input = new Scanner(System.in);
 
@@ -53,13 +51,15 @@ public class GameSimulator {
       }
     }
     if (inputChoice == 2) {
+      System.out.println("To exit console enter empty string \n");
+
+      System.out.println("Enter your first command ");
       consoleInputScanner.readInput();
 
     } else {
       fileInputScanner.readInput();
     }
   }
-
 
 }
 

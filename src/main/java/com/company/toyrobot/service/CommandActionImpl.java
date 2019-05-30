@@ -25,7 +25,7 @@ public class CommandActionImpl implements CommandAction {
   public RobotPosition performAction(Game game, String command) {
 
     if("PLACE".equals(command.split(" ")[0]) && !isValidPlaceCommand(command)){
-      log.error("invalid Place command, robot will not move");
+      log.error("invalid place command, robot will not move");
       return game.getRobotPosition();
     }
 
@@ -33,7 +33,11 @@ public class CommandActionImpl implements CommandAction {
       Optional<NewPosition> newPosition = getNewPosition(command.split(" ")[0]);
       if (newPosition.isPresent()) {
         return newPosition.get().getNewPosition(game, command);
+      }else {
+        log.error("invalid command, robot will not move");
       }
+    } else {
+      log.error("invalid command, robot will not move");
     }
     return game.getRobotPosition();
 
