@@ -17,11 +17,12 @@ go to the project directory and run the following commands
 
 2. ```mvn spring-boot:run```
 
+Maven will run GameSimulator.java  
+
 You will be prompted to choose the mode.
 - Choose 1: File Input:  src/main/resources/input.txt
 - Choose 2: Console Input
 
-#### Game Rules
 
 #### Scenarios covered in the input file
 
