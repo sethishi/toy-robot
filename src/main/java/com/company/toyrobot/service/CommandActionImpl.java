@@ -3,8 +3,6 @@ package com.company.toyrobot.service;
 import com.company.toyrobot.domain.Command;
 import com.company.toyrobot.domain.Game;
 import com.company.toyrobot.domain.RobotPosition;
-import com.company.toyrobot.factory.PositionFactory;
-import com.company.toyrobot.utils.HelperUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.EnumUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +17,8 @@ import static com.company.toyrobot.utils.HelperUtils.isValidPlaceCommand;
 @Slf4j
 public class CommandActionImpl implements CommandAction {
 
-  @Autowired
-  private Game game;
+//  @Autowired
+//  private Game game;
 
   public RobotPosition performAction(Game game, String command) {
 
@@ -30,7 +28,7 @@ public class CommandActionImpl implements CommandAction {
     }
 
     if (EnumUtils.isValidEnum(Command.class, command.split(" ")[0])) {
-      Optional<NewPosition> newPosition = getNewPosition(command.split(" ")[0]);
+      Optional<ToNewPosition> newPosition = getNewPosition(command.split(" ")[0]);
       if (newPosition.isPresent()) {
         return newPosition.get().getNewPosition(game, command);
       }else {

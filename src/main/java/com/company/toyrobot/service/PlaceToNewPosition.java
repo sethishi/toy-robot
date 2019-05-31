@@ -5,7 +5,7 @@ import com.company.toyrobot.domain.RobotPosition;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class MovePlaceNewPosition implements NewPosition {
+public class PlaceToNewPosition implements ToNewPosition {
 
   @Override
   public RobotPosition getNewPosition(Game game, String command) {

@@ -7,51 +7,52 @@ import com.company.toyrobot.domain.Table;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
-public class MoveLeftNewPositionTest {
+public class RotateRightTest {
 
   private static RobotPosition defaultRobotPosition = new RobotPosition(0, 0, Direction.NORTH);
   private static int UNITS = 4;
   private static Table TEST_SQUARE_TABLE = new Table(UNITS, UNITS);
-  private static String COMMAND = "LEFT";
+  RotateRight rotateRight = new RotateRight();
+  private static String COMMAND = "RIGHT";
 
   private static Game testGame = new Game(TEST_SQUARE_TABLE, defaultRobotPosition);
-  MoveLeftNewPosition moveLeftNewPosition = new MoveLeftNewPosition();
 
   @Test
-  public void testLeftMoveFromNorth() {
+  public void testRightMoveFromNorth() {
     testGame.setRobotPosition(new RobotPosition(1, 2, Direction.NORTH));
-    assertThat(moveLeftNewPosition.getNewPosition(testGame,COMMAND).getDirection(), is(Direction.WEST));
+    assertThat(rotateRight.getNewPosition(testGame,COMMAND).getDirection(), is(Direction.EAST));
 
   }
 
   @Test
-  public void testLeftMoveFromEast() {
+  public void testRightMoveFromEast() {
     testGame.setRobotPosition(new RobotPosition(1, 2, Direction.EAST));
-    assertThat(moveLeftNewPosition.getNewPosition(testGame,COMMAND).getDirection(), is(Direction.NORTH));
+    assertThat(rotateRight.getNewPosition(testGame,COMMAND).getDirection(), is(Direction.SOUTH));
 
   }
 
   @Test
-  public void testLeftMoveFromWest() {
+  public void testRightMoveFromWest() {
     testGame.setRobotPosition(new RobotPosition(1, 2, Direction.WEST));
-    assertThat(moveLeftNewPosition.getNewPosition(testGame,COMMAND).getDirection(), is(Direction.SOUTH));
+    assertThat(rotateRight.getNewPosition(testGame,COMMAND).getDirection(), is(Direction.NORTH));
 
   }
 
   @Test
-  public void testLeftMoveFromSouth() {
+  public void testRightMoveFromSouth() {
     testGame.setRobotPosition(new RobotPosition(1, 2, Direction.SOUTH));
-    assertThat(moveLeftNewPosition.getNewPosition(testGame,COMMAND).getDirection(), is(Direction.EAST));
+    assertThat(rotateRight.getNewPosition(testGame,COMMAND).getDirection(), is(Direction.WEST));
 
   }
+
   @Test(expected = NullPointerException.class)
   public void testNullDirection() {
     testGame.setRobotPosition(new RobotPosition(1, 2, null));
-    assertNull(moveLeftNewPosition.getNewPosition(testGame,COMMAND).getDirection());
+    assertNull(rotateRight.getNewPosition(testGame,COMMAND).getDirection());
 
   }
+
 
 }

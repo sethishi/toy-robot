@@ -37,3 +37,4 @@ This is prompt to choose the mode.
 1. All the output console output
 2. Errors are logged on console when they happen
 3. Empty string input on console exits the program
+4. Used lombok 

@@ -25,7 +25,7 @@ public class CommandActionImplTest {
   CommandActionImpl commandAction = new CommandActionImpl();
 
   @Test
-  public void testLeftMoveIsCalledCorrectly() {
+  public void testMoveIsCalledCorrectly() {
     assertThat(commandAction.performAction(testGame, Command.LEFT.toString()).getDirection()).isEqualTo(Direction.WEST);
     assertThat(commandAction.performAction(testGame, Command.RIGHT.toString()).getDirection()).isEqualTo(Direction.EAST);
     assertThat(commandAction.performAction(testGame, Command.MOVE.toString()).getX()).isEqualTo(0);

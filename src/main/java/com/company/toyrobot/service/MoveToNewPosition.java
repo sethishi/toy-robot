@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @NoArgsConstructor
 @Slf4j
-public class MoveNewPosition implements NewPosition {
+public class MoveToNewPosition implements ToNewPosition {
 
   @Override
   public RobotPosition getNewPosition(Game game, String command) {

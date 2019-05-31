@@ -36,10 +36,11 @@ public class ConsoleInputScanner implements InputScanner {
 
     b = isValidPlaceCommand(firstCommand);
     while (!b) {
-      log.error("first command must be a valid PLACE command <PLACE 1,2,NORTH>");
+      System.out.println("first command must be a valid PLACE command <PLACE 1,2,NORTH>");
       firstCommand = scanner.nextLine();
       b = isValidPlaceCommand(firstCommand);
     }
+
 
     Game newGame = playGame.start(firstCommand);
 

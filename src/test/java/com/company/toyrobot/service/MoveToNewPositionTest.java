@@ -9,7 +9,7 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class MoveNewPositionTest {
+public class MoveToNewPositionTest {
 
   private static RobotPosition defaultRobotPosition = new RobotPosition(0, 0, Direction.NORTH);
   private static int UNITS = 4;
@@ -17,7 +17,7 @@ public class MoveNewPositionTest {
   private static String COMMAND= "MOVE";
 
   private static Game testGame = new Game(TEST_SQUARE_TABLE, defaultRobotPosition);
-  private static MoveNewPosition moveNewPostion = new MoveNewPosition();
+  private static MoveToNewPosition moveNewPostion = new MoveToNewPosition();
 
 
   @Test

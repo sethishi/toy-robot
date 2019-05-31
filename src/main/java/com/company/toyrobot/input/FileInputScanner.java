@@ -24,9 +24,6 @@ public class FileInputScanner implements InputScanner {
   @Autowired
   CommandActionImpl commandAction;
 
-//  @Autowired
-//  Game game;
-
   private static Scanner scanner;
 
   static {
@@ -37,7 +34,6 @@ public class FileInputScanner implements InputScanner {
     }
   }
 
-  private static boolean truefalse = true;
 
   @Override
   public void readInput() {

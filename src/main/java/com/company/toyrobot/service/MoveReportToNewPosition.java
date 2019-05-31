@@ -3,7 +3,7 @@ package com.company.toyrobot.service;
 import com.company.toyrobot.domain.Game;
 import com.company.toyrobot.domain.RobotPosition;
 
-public class MoveReportNewPosition implements NewPosition {
+public class MoveReportToNewPosition implements ToNewPosition {
 
   @Override
   public RobotPosition getNewPosition(Game game, String command) {

@@ -3,8 +3,8 @@ package com.company.toyrobot.service;
 import com.company.toyrobot.domain.Game;
 import com.company.toyrobot.domain.RobotPosition;
 
-public interface NewPosition {
+public interface ToNewPosition {
 
-   RobotPosition getNewPosition(Game game,String command);
+  RobotPosition getNewPosition(Game game, String command);
 
 }

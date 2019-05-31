@@ -15,17 +15,17 @@ public class PositionFactory {
   private PositionFactory (){
 
   }
-  static Map<String, NewPosition> newPostionMap = new HashMap<>();
+  static Map<String, ToNewPosition> newPostionMap = new HashMap<>();
 
   static {
-    newPostionMap.put(Command.RIGHT.toString(), new MoveRightNewPosition());
-    newPostionMap.put(Command.LEFT.toString(), new MoveLeftNewPosition());
-    newPostionMap.put(Command.MOVE.toString(), new MoveNewPosition());
-    newPostionMap.put(Command.PLACE.toString(), new MovePlaceNewPosition());
-    newPostionMap.put(Command.REPORT.toString(), new MoveReportNewPosition());
+    newPostionMap.put(Command.RIGHT.toString(), new RotateRight());
+    newPostionMap.put(Command.LEFT.toString(), new RotateLeft());
+    newPostionMap.put(Command.MOVE.toString(), new MoveToNewPosition());
+    newPostionMap.put(Command.PLACE.toString(), new PlaceToNewPosition());
+    newPostionMap.put(Command.REPORT.toString(), new MoveReportToNewPosition());
   }
 
-  public static Optional<NewPosition> getNewPosition(String command) {
+  public static Optional<ToNewPosition> getNewPosition(String command) {
     return Optional.ofNullable(newPostionMap.get(command));
   }
 
