@@ -16,8 +16,12 @@ import static java.lang.Integer.valueOf;
 @Component
 public class ToyRobotGameImpl extends PlayGame {
 
+  final Table squareTable;
+
   @Autowired
-  Table squareTable;
+  public ToyRobotGameImpl(Table squareTable) {
+    this.squareTable = squareTable;
+  }
 
   @Override
   public Game start(String command) {

@@ -5,7 +5,6 @@ import com.company.toyrobot.domain.Game;
 import com.company.toyrobot.domain.RobotPosition;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.EnumUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -17,8 +16,6 @@ import static com.company.toyrobot.utils.HelperUtils.isValidPlaceCommand;
 @Slf4j
 public class CommandActionImpl implements CommandAction {
 
-//  @Autowired
-//  private Game game;
 
   public RobotPosition performAction(Game game, String command) {
 

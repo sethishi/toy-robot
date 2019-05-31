@@ -17,7 +17,7 @@ go to the project directory and run the following commands
 
 2. ```mvn spring-boot:run```
 
-This is prompt to choose the mode.
+You will be prompted to choose the mode.
 - Choose 1: File Input:  src/main/resources/input.txt
 - Choose 2: Console Input
 

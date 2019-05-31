@@ -16,14 +16,18 @@ import static com.company.toyrobot.utils.HelperUtils.isValidPlaceCommand;
 @Slf4j
 public class ConsoleInputScanner implements InputScanner {
 
-  @Autowired
-  private ToyRobotGameImpl playGame;
+  private final ToyRobotGameImpl playGame;
 
   @Autowired
   CommandActionImpl commandAction;
 
-  private static Scanner scanner = new Scanner(System.in);
+  private static final Scanner scanner = new Scanner(System.in);
   private boolean truefalse = true;
+
+  @Autowired
+  public ConsoleInputScanner(ToyRobotGameImpl playGame) {
+    this.playGame = playGame;
+  }
 
   /**
    * Console accepts input commands until and empty string is passed
@@ -32,9 +36,9 @@ public class ConsoleInputScanner implements InputScanner {
   public void readInput() {
 
     String firstCommand = scanner.nextLine();
-    boolean b = false;
 
-    b = isValidPlaceCommand(firstCommand);
+
+    boolean b = isValidPlaceCommand(firstCommand);
     while (!b) {
       System.out.println("first command must be a valid PLACE command <PLACE 1,2,NORTH>");
       firstCommand = scanner.nextLine();

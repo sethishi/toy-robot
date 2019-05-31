@@ -4,11 +4,10 @@ import com.company.toyrobot.domain.Game;
 
 import java.util.Optional;
 
-public class Rotate {
+class Rotate {
 
-
-  protected Optional<Short> getRobotDirection(Game game) {
-    return Optional.ofNullable(game.getRobotPosition().getDirection().getLocation());
+  Optional<Short> getRobotDirection(Game game) {
+    return Optional.of(game.getRobotPosition().getDirection().getLocation());
   }
 
 }

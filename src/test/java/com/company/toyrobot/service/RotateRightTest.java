@@ -11,11 +11,11 @@ import static org.junit.Assert.*;
 
 public class RotateRightTest {
 
-  private static RobotPosition defaultRobotPosition = new RobotPosition(0, 0, Direction.NORTH);
-  private static int UNITS = 4;
-  private static Table TEST_SQUARE_TABLE = new Table(UNITS, UNITS);
-  RotateRight rotateRight = new RotateRight();
-  private static String COMMAND = "RIGHT";
+  private static final RobotPosition defaultRobotPosition = new RobotPosition(0, 0, Direction.NORTH);
+  private static final int UNITS = 4;
+  private static final Table TEST_SQUARE_TABLE = new Table(UNITS, UNITS);
+  private static final RotateRight rotateRight = new RotateRight();
+  private static final String COMMAND = "RIGHT";
 
   private static Game testGame = new Game(TEST_SQUARE_TABLE, defaultRobotPosition);
 

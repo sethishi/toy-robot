@@ -1,22 +1,22 @@
 package com.company.toyrobot.utils;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.*;
 
+@SpringBootTest
+@RunWith(SpringRunner.class)
 public class HelperUtilsTest {
 
 
   @Test
   public void isValidPlaceCommand() {
 
-    HelperUtils.x = 4;
-    HelperUtils.y = 4;
     boolean validPlaceCommand = HelperUtils.isValidPlaceCommand("PLACE 1,2,NORTH");
-
     assertTrue(validPlaceCommand);
-
-
   }
 
   @Test
@@ -30,7 +30,7 @@ public class HelperUtilsTest {
 
     TestEnum test3 = HelperUtils.getEnumFromStr(TestEnum.class, "TEST3");
 
-    assertTrue(test3.equals(TestEnum.TEST3));
+    assertEquals(test3,TestEnum.TEST3);
 
   }
 

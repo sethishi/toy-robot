@@ -16,10 +16,16 @@ public class GameSimulator {
   private static InputScanner fileInputScanner;
   private static InputScanner consoleInputScanner;
 
+
+  final FileInputScanner getFileInputScanner;
+  final ConsoleInputScanner getConsoleInputScanner;
+
   @Autowired
-   FileInputScanner getFileInputScanner;
-  @Autowired
-  ConsoleInputScanner getConsoleInputScanner;
+  public GameSimulator(ConsoleInputScanner getConsoleInputScanner, FileInputScanner getFileInputScannerfile) {
+    this.getConsoleInputScanner = getConsoleInputScanner;
+    this.getFileInputScanner = getFileInputScannerfile  ;
+  }
+
 
   @PostConstruct
   private void init() {
@@ -33,7 +39,7 @@ public class GameSimulator {
     SpringApplication.run(GameSimulator.class, args);
 
 
-    System.out.println("choose input source : \n"+"[1] - FILE \n"+"[2] - CONSOLE \n");
+    System.out.println("choose input source : \n" + "[1] - FILE \n" + "[2] - CONSOLE \n");
 
     Scanner input = new Scanner(System.in);
 

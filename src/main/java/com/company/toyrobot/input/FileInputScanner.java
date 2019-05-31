@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Objects;
 import java.util.Scanner;
 
 import static com.company.toyrobot.utils.HelperUtils.isValidPlaceCommand;
@@ -38,9 +39,8 @@ public class FileInputScanner implements InputScanner {
   @Override
   public void readInput() {
     String firstCommand = scanner.nextLine();
-    boolean b = false;
 
-    b = isValidPlaceCommand(firstCommand);
+    boolean b = isValidPlaceCommand(firstCommand);
     while (!b) {
       System.out.println(firstCommand);
       log.error("first command must be a valid PLACE command <PLACE 1,2,NORTH>");
@@ -65,7 +65,7 @@ public class FileInputScanner implements InputScanner {
 
   private static File getFile() {
     ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-    return new File(classLoader.getResource("input.txt").getFile());
+    return new File(Objects.requireNonNull(classLoader.getResource("input.txt")).getFile());
   }
 
   private void playGame(Game newGame, String command) {

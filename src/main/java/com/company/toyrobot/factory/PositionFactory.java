@@ -15,7 +15,7 @@ public class PositionFactory {
   private PositionFactory (){
 
   }
-  static Map<String, ToNewPosition> newPostionMap = new HashMap<>();
+  private static final Map<String, ToNewPosition> newPostionMap = new HashMap<>();
 
   static {
     newPostionMap.put(Command.RIGHT.toString(), new RotateRight());

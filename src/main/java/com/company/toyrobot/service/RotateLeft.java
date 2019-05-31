@@ -12,8 +12,7 @@ public class RotateLeft extends Rotate implements ToNewPosition {
 
   @Override
   public RobotPosition getNewPosition(Game game, String command) {
-    int currentX;
-    int currentY;
+    int currentX, currentY;
 
     currentX = game.getRobotPosition().getX();
     currentY = game.getRobotPosition().getY();
@@ -25,7 +24,7 @@ public class RotateLeft extends Rotate implements ToNewPosition {
       if (newPosition <= 0) {
         newPosition = 4;
       }
-      enumFromValue  = Direction.getEnumFromValue(newPosition);
+      enumFromValue = Direction.getEnumFromValue(newPosition);
     }
 
     return new RobotPosition(currentX, currentY, enumFromValue);

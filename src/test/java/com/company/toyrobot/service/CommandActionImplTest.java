@@ -5,7 +5,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -15,14 +14,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 @DirtiesContext
 public class CommandActionImplTest {
 
-  private static RobotPosition defaultRobotPosition = new RobotPosition(0, 0, Direction.NORTH);
-  private static int UNITS = 4;
-  private static Table TEST_SQUARE_TABLE = new Table(UNITS, UNITS);
+  private static final RobotPosition defaultRobotPosition = new RobotPosition(0, 0, Direction.NORTH);
+  private static final int UNITS = 4;
+  private static final Table TEST_SQUARE_TABLE = new Table(UNITS, UNITS);
 
 
-  private static Game testGame = new Game(TEST_SQUARE_TABLE, defaultRobotPosition);
+  private static final Game testGame = new Game(TEST_SQUARE_TABLE, defaultRobotPosition);
 
-  CommandActionImpl commandAction = new CommandActionImpl();
+  private final CommandActionImpl commandAction = new CommandActionImpl();
 
   @Test
   public void testMoveIsCalledCorrectly() {

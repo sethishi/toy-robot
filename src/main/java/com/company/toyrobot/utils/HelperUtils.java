@@ -16,12 +16,12 @@ import static org.apache.commons.lang3.EnumUtils.isValidEnum;
 public class HelperUtils {
 
   @Value("${table.x}")
-  int tableWidth;
+  private int tableWidth;
   @Value("${table.y}")
-  int tableHeight;
+  private int tableHeight;
 
-  static int x;
-  static int y;
+  private static int x;
+  private static int y;
 
   @PostConstruct
   public void init() {
@@ -33,7 +33,7 @@ public class HelperUtils {
   private HelperUtils() {
   }
 
-  static boolean isValid = false;
+  private static boolean isValid = false;
 
   public static boolean isValidPlaceCommand(String command) {
 
@@ -51,9 +51,6 @@ public class HelperUtils {
         isValid=false;
       }
     }
-
-
-
     return isValid;
 
   }

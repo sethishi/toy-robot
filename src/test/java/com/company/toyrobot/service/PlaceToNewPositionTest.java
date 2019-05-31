@@ -11,13 +11,13 @@ import static org.junit.Assert.*;
 
 public class PlaceToNewPositionTest {
 
-  private static RobotPosition defaultRobotPosition = new RobotPosition(0, 0, Direction.NORTH);
-  private static int UNITS = 4;
-  private static Table TEST_SQUARE_TABLE = new Table(UNITS, UNITS);
-  private static String COMMAND= "PLACE 0,0,NORTH";
+  private static final RobotPosition defaultRobotPosition = new RobotPosition(0, 0, Direction.NORTH);
+  private static final int UNITS = 4;
+  private static final Table TEST_SQUARE_TABLE = new Table(UNITS, UNITS);
+  private static final String COMMAND= "PLACE 0,0,NORTH";
 
-  private static Game testGame = new Game(TEST_SQUARE_TABLE, defaultRobotPosition);
-  private static PlaceToNewPosition moveNewPostion = new PlaceToNewPosition();
+  private static final Game testGame = new Game(TEST_SQUARE_TABLE, defaultRobotPosition);
+  private static final PlaceToNewPosition moveNewPostion = new PlaceToNewPosition();
 
 
   @Test
